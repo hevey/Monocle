@@ -18,12 +18,12 @@ namespace Monocle.CommandLine.Test
             var query = contacts
                 .Query()
                 .OrderBy(x => x.Id)
-                .Select(x => new {x.Id, x.Message, x.SentTime})
+                .Select(x => new {x.Id, x.Message, x.SubmissionTime})
                 .ToList();
             
             foreach(var contact in query)
             {
-                Console.WriteLine($"ID: {contact.Id}, Message: {contact.Message}, Sent Time: {contact.SentTime?.ToLocalTime()}");
+                Console.WriteLine($"ID: {contact.Id}, Message: {contact.Message}, Sent Time: {contact.SubmissionTime?.ToLocalTime()}");
             }
         }
     }

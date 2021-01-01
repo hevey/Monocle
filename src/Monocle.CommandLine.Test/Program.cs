@@ -9,7 +9,7 @@ namespace Monocle.CommandLine.Test
     {
         static void Main(string[] args)
         {
-            using var db = new LiteDatabase("/Users/hevey/Development/Monocle/src/Monocle/Monocle.db");
+            using var db = new LiteDatabase("/Users/hevey/Development/Monocle/src/Monocle/db/Monocle.db");
             
             var contacts = db.GetCollection<Contact>("contacts");
 

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  monocle:
+    image: ${DOCKER_REGISTRY-}monocle
+    build:
+      context: .
+      dockerfile: Monocle/Dockerfile
+    ports:
+    - "0.0.0.0:8080:80"
+    - "0.0.0.0:8443:443"
+    volumes:
+      - type: bind
+        source: ./Monocle/db
+        target: /app/db

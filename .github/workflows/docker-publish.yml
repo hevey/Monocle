@@ -32,7 +32,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build ../.. --file src/Monocle/Dockerfile
+            docker-compose --file "src/docker-compose.yml"
           fi
 
   # Push image to GitHub Packages.

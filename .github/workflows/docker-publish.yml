@@ -32,7 +32,8 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker-compose --file "src/docker-compose.yml"
+            cd src
+            docker-compose up
           fi
 
   # Push image to GitHub Packages.

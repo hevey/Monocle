@@ -8,7 +8,7 @@ namespace Monocle.Services
     {
         public void PostMessage(Contact contact)
         {
-            using var db = new LiteDatabase("Monocle.db");
+            using var db = new LiteDatabase("db/Monocle.db");
             var col = db.GetCollection<Contact>("contacts");
             
             col.EnsureIndex(x => x.Id, true);

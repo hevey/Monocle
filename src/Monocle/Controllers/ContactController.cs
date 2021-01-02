@@ -20,10 +20,7 @@ namespace Monocle.Controllers
         {
             _dbService.PostMessage(contact);
             
-
             return Ok();
         }
-
-
     }
 }

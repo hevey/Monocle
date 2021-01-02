@@ -22,7 +22,7 @@ namespace Monocle.Controllers
 
             if (platform == null) return BadRequest("Platform not found");
             _platformService.PostMessage(platform, contact);
-            return Ok("Thank you for submitting");
+            return Ok("Thank you for contacting us!");
         }
     }
 }

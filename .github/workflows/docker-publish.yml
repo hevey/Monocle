@@ -33,7 +33,7 @@ jobs:
             docker-compose --file docker-compose.test.yml run sut
           else
             cd src
-            docker-compose up
+            docker-compose build
           fi
 
   # Push image to GitHub Packages.

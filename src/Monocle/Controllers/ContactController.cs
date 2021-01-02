@@ -8,18 +8,20 @@ namespace Monocle.Controllers
     [Route("[controller]")]
     public class ContactController : ControllerBase
     {
-        private readonly IDBService _dbService;
+        private readonly IPlatformService _platformService;
         
-        public ContactController(IDBService dbService)
+        public ContactController(IPlatformService platformService)
         {
-            _dbService = dbService;
+            _platformService = platformService;
         }
         
         [HttpPost]
         public ActionResult<Contact> Post(Contact contact)
         {
-            _dbService.PostMessage(contact);
-            
+            Platform? platform = _platformService.FindPlatform(1);
+
+            if (platform == null) return BadRequest("Platform requested not found");
+            _platformService.PostMessage(platform, contact);
             return Ok();
         }
     }

@@ -27,7 +27,7 @@ namespace Monocle
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IDBService, DBService>();
+            services.AddScoped<IPlatformService, PlatformService>();
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Monocle", Version = "v1"}); });
         }

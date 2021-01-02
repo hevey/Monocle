@@ -20,9 +20,9 @@ namespace Monocle.Controllers
         {
             Platform? platform = _platformService.FindPlatform(1);
 
-            if (platform == null) return BadRequest("Platform requested not found");
+            if (platform == null) return BadRequest("Platform not found");
             _platformService.PostMessage(platform, contact);
-            return Ok();
+            return Ok("Message Sent Successfully");
         }
     }
 }

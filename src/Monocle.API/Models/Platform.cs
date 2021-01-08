@@ -1,4 +1,4 @@
-namespace Monocle.Models
+namespace Monocle.API.Models
 {
     public abstract class Platform
     {

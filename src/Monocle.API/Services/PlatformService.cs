@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Monocle.Models;
+using Monocle.API.Models;
 
-namespace Monocle.Services
+namespace Monocle.API.Services
 {
     public class PlatformService : IPlatformService
     {

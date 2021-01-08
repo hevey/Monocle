@@ -1,8 +1,8 @@
 using System;
 using LiteDB;
-using Monocle.Models;
+using Monocle.API.Models;
 
-namespace Monocle.Services
+namespace Monocle.API.Services
 {
     public class DbPlatform : Platform
     {
@@ -18,7 +18,7 @@ namespace Monocle.Services
 
         public override void PostMessage(Contact contact)
         {
-            using var db = new LiteDatabase("db/Monocle.db");
+            using var db = new LiteDatabase("db/Monocle.API.db");
             var col = db.GetCollection<Contact>("contacts");
             
             col.EnsureIndex(x => x.Id, true);

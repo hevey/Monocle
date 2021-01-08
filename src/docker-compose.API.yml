@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}monocle
     build:
       context: ..
-      dockerfile: src/Monocle/Dockerfile
+      dockerfile: src/Monocle.API/Dockerfile

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Monocle.Models;
-using Monocle.Services;
+using Monocle.API.Models;
+using Monocle.API.Services;
 
-namespace Monocle.Controllers
+namespace Monocle.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using LiteDB;
 
-namespace Monocle.Models
+namespace Monocle.API.Models
 {
     public class Contact
     {

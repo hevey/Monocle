@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using LiteDB;
-using Monocle.Models;
+using Monocle.API.Models;
 
 namespace Monocle.CommandLine.Test
 {
@@ -9,7 +9,7 @@ namespace Monocle.CommandLine.Test
     {
         static void Main(string[] args)
         {
-            using var db = new LiteDatabase("/Users/hevey/Development/Monocle/src/Monocle/db/Monocle.db");
+            using var db = new LiteDatabase("/Users/hevey/Development/Monocle/src/Monocle.API/db/Monocle.API.db");
             
             var contacts = db.GetCollection<Contact>("contacts");
 

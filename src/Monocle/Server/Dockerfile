@@ -7,6 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 COPY Monocle/Server/Monocle.Server.csproj Monocle/Server/
+COPY Monocle/Client/Monocle.Client.csproj Monocle/Client/
 COPY Monocle/Shared/Monocle.Shared.csproj Monocle/Shared/
 RUN dotnet restore "Monocle/Server/Monocle.Server.csproj"
 COPY . .

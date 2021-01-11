@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monocle.API", "Monocle.API\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monocle.CommandLine.Test", "Monocle.CommandLine.Test\Monocle.CommandLine.Test.csproj", "{CD070534-50A1-4F35-8CE7-FA8252454C99}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose.API", "docker-compose.API.dcproj", "{A98E9FB1-33C8-4695-9A1F-2C42E58A8373}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A98E9FB1-33C8-4695-9A1F-2C42E58A8373}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monocle.Server", "Monocle\Server\Monocle.Server.csproj", "{81DD1FE0-E38B-42D4-AFF3-832E9D542EC2}"
 EndProject

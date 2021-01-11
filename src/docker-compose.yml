@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  monocle:
+    image: ${DOCKER_REGISTRY-}monocle
+    build:
+      context: .
+      dockerfile: ./Monocle/Client/Dockerfile
+    ports:
+    - 6080:80
+#  server:
+#    image: ${DOCKER_REGISTRY-}monocle.server
+#    build:
+#      context: .
+#      dockerfile: ./Monocle/Server/Dockerfile

@@ -1,4 +1,7 @@
 ﻿@page "/counter"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@attribute [Authorize]
 
 <h1>Counter</h1>
 
@@ -8,6 +11,15 @@
 
 @code {
     private int currentCount = 0;
+
+    protected override void OnInitialized()
+    {
+        try { }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
 
     private void IncrementCount()
     {

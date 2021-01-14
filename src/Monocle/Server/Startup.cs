@@ -8,8 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Microsoft.OpenApi.Models;
 using Monocle.Server.Data;
 using Monocle.Server.Models;
+using Monocle.Shared.Services;
 
 namespace Monocle.Server
 {
@@ -43,6 +45,9 @@ namespace Monocle.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Monocle", Version = "v1"}); });
+            
+            services.AddScoped<IPlatformService, PlatformService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +81,12 @@ namespace Monocle.Server
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Monocle V1");
             });
         }
     }

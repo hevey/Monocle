@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{20C27224-AEE2-41CF-8AB5-8A26EEACB8E4}|Default">
+  <MonoDevelop.Ide.ItemProperties.Monocle.Shared FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Monocle.Client FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monocle/Server/Dockerfile">
+    <Files>
+      <File FileName="Monocle/Server/Monocle.Server.csproj" Line="5" Column="87" />
+      <File FileName="Monocle/Server/Program.cs" />
+      <File FileName="Monocle/Server/Startup.cs" />
+      <File FileName="Monocle/Server/appsettings.json" Line="20" Column="21" />
+      <File FileName="Monocle/Server/Dockerfile" Line="9" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Monocle" expanded="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="Monocle.Server" expanded="True">
+              <Node name="Dockerfile" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Monocle.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

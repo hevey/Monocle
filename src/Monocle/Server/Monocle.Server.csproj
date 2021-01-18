@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>Monocle.Server-BBE30634-EC55-4A82-A38E-FBD66F43CD1C</UserSecretsId>
     <DockerComposeProjectPath>../../docker-compose.dcproj</DockerComposeProjectPath>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

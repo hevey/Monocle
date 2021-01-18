@@ -9,5 +9,6 @@ namespace Monocle.Shared.Services
 
         Platform? FindPlatform(int id);
         void PostMessage(Platform platform, Contact contact);
+        List<Contact> GetMessages(Platform platform);
     }
 }

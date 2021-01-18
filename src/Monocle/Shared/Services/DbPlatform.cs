@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using LiteDB;
 using Monocle.Shared.Models;
 
-namespace Monocle.API.Services
+namespace Monocle.Shared.Services
 {
     public class DbPlatform : Platform
     {
@@ -18,12 +19,27 @@ namespace Monocle.API.Services
 
         public override void PostMessage(Contact contact)
         {
-            using var db = new LiteDatabase("db/Monocle.API.db");
+            using var db = new LiteDatabase("../Data/Monocle.db");
             var col = db.GetCollection<Contact>("contacts");
             
             col.EnsureIndex(x => x.Id, true);
 
             col.Insert(contact);
+        }
+
+        public override List<Contact> GetMessages()
+        {
+            using var db = new LiteDatabase("../Data/Monocle.db");
+            
+            var contacts = db.GetCollection<Contact>("contacts");
+
+            var query = contacts
+                .Query()
+                .OrderBy(x => x.Id)
+                .Select(x => x)
+                .ToList();
+
+            return query;
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Monocle.Shared.Services;
 
 namespace Monocle.Client
 {
@@ -24,6 +25,7 @@ namespace Monocle.Client
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("Monocle.ServerAPI"));
 
+            builder.Services.AddSingleton<IPlatformService, PlatformService>();
             builder.Services.AddApiAuthorization();
 
             await builder.Build().RunAsync();

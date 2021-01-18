@@ -1,9 +1,9 @@
 @page "/Messages"
-@using Monocle.Shared.Services
 @using Monocle.Shared.Models
-@using System.Net.Http
-@using System.Net
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @inject HttpClient Http
+@attribute [Authorize]
 
 <h3>Messages</h3>
 
@@ -27,6 +27,17 @@
 @code {
     public List<Contact> ContactMessages = new ();
 
-    protected override async Task OnInitializedAsync() => ContactMessages = await Http.GetFromJsonAsync<List<Contact>>("Contact");
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            ContactMessages = await Http.GetFromJsonAsync<List<Contact>>("Contact");
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+        
+    }
 
 }

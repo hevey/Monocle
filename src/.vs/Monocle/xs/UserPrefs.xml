@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{37293A6F-3298-43D6-A269-AB665452CDFB}|Default">
+  <MonoDevelop.Ide.ItemProperties.Monocle.Server PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monocle/Shared/Services/DbPlatform.cs">
+    <Files>
+      <File FileName="Monocle/Client/Pages/Messages.razor" Line="31" Column="9" />
+      <File FileName="Monocle/Shared/Services/PlatformService.cs" Line="29" Column="1" />
+      <File FileName="Monocle/Shared/Services/DbPlatform.cs" Line="23" Column="53" />
+      <File FileName="Monocle/Shared/Services/IPlatformService.cs" Line="14" Column="2" />
+      <File FileName="Monocle/Shared/Models/Platform.cs" Line="12" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Monocle" expanded="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="Monocle.Client" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Pages" expanded="True" />
+            </Node>
+            <Node name="Monocle.Server" expanded="True" />
+            <Node name="Monocle.Shared" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="DbPlatform.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Monocle.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

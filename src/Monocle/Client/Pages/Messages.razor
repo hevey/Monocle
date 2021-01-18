@@ -1,0 +1,32 @@
+@page "/Messages"
+@using Monocle.Shared.Services
+@using Monocle.Shared.Models
+@using System.Net.Http
+@using System.Net
+@inject HttpClient Http
+
+<h3>Messages</h3>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Message</th>
+        <th>Submission Time</th>
+    </tr>
+    @foreach (var message in ContactMessages)
+    {
+        <tr>
+            <td>@message.Id</td>
+            <td>@message.Message</td>
+            <td>@message.SubmissionTime</td>
+        </tr>    
+    }
+    
+</table>
+
+@code {
+    public List<Contact> ContactMessages = new ();
+
+    protected override async Task OnInitializedAsync() => ContactMessages = await Http.GetFromJsonAsync<List<Contact>>("Contact");
+
+}

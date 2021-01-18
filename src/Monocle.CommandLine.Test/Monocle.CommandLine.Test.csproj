@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Monocle\Monocle.csproj" />
+      <ProjectReference Include="..\Monocle.API\Monocle.API.csproj" />
     </ItemGroup>
 
 </Project>

@@ -9,8 +9,16 @@ Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
+<button class="btn btn-primary" @onclick="OpenModal">
+    Open Modal
+</button>
+
+<Schema @bind-Open="openModal"></Schema>
+
 @code
 {
+    private bool openModal;
+    
     protected override void OnInitialized()
     {
         try { }
@@ -18,5 +26,10 @@ Welcome to your new app.
         {
             exception.Redirect();
         }
+    }
+
+    private void OpenModal(MouseEventArgs obj)
+    {
+        openModal = true;
     }
 }

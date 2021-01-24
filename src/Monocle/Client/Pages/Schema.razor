@@ -1,0 +1,84 @@
+@using Monocle.Shared.Models
+
+<div class="modal @_modalDisplay" @onclick="CloseModal">
+ 
+    <!-- Modal content -->
+    <div class="modal-content" @onclick:stopPropagation="true">
+        <span class="close" @onclick="CloseModal">&times;</span>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Field Type</th>
+                <th>Required?</th>
+            </tr>
+            @foreach (var field in _fields)
+            {
+                <tr>
+                    <td>@field.Name</td>
+                    <td>@field.FieldType</td>
+                    <td>@field.Required</td>
+                    <span class="close" @onclick="@(() => DeleteField(field.Id))">&times;</span>
+                </tr>
+            }
+
+        </table>
+
+        <button class="btn btn-primary" @onclick="AddField">
+            Add Field
+        </button>
+    </div>
+ 
+</div>
+
+@code {
+
+    private bool _open;
+    private string _modalDisplay;
+    private List<Field> _fields = new();
+    private Random _random = new();
+    private int _counter = 0;
+
+    [Parameter]
+    public bool Open
+    {
+        get => _open;
+        set
+        {
+            _open = value;
+            DisplayModal();
+        }
+    }
+
+    [Parameter]
+    public EventCallback<bool> OpenChanged { get; set; }
+
+    private void DisplayModal()
+    {
+        _modalDisplay = _open ? "open" : "";
+    }
+
+    private void CloseModal()
+    {
+        Open = false;
+    }
+
+    private void AddField()
+    {
+        _fields.Add(new Field
+        {
+            Id = _counter,
+            Name = $"Name {_random.Next(1, 100)}",
+            FieldType = FieldType.Text,
+            Required = false
+        });
+        _counter++;
+    }
+
+    private void DeleteField(int id)
+    {
+        var field = _fields.Single(f => f.Id == id);
+        _fields.Remove(field);
+    }
+
+}
+     

@@ -5,27 +5,71 @@
     <!-- Modal content -->
     <div class="modal-content" @onclick:stopPropagation="true">
         <span class="close" @onclick="CloseModal">&times;</span>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Field Type</th>
-                <th>Required?</th>
-            </tr>
-            @foreach (var field in _fields)
-            {
+        <EditForm Model="@_newField" OnSubmit="SaveField">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>@field.Name</td>
-                    <td>@field.FieldType</td>
-                    <td>@field.Required</td>
-                    <span class="close" @onclick="@(() => DeleteField(field.Id))">&times;</span>
+                    <th scope="col">Name</th>
+                    <th scope="col">Field Type</th>
+                    <th scope="col">Required?</th>
+                    <th scope="col"></th>
                 </tr>
-            }
-
-        </table>
-
-        <button class="btn btn-primary" @onclick="AddField">
-            Add Field
-        </button>
+                </thead>
+                <tbody>
+                @foreach (var field in _fields)
+                {
+                    <tr scope="row">
+                        <td>@field.Name</td>
+                        <td>@field.FieldType</td>
+                        <td>@field.Required</td>
+                        <td><span class="close" @onclick="() => DeleteField(field.Id)">&times;</span></td>
+                    </tr>
+                }
+                @if (_displayAddField)
+                {
+                    <tr scope="row">
+                        <td>
+                            <InputText id="name" @bind-Value="_newField.Name" class="form-control"/>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <InputSelect @bind-Value="_newField.FieldType" class="form-control">
+                                    @foreach (var value in Enum.GetValues(typeof(FieldType)))
+                                    {
+                                        <option>@value</option>
+                                    }
+                                </InputSelect>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check">
+                                <InputCheckbox id="required" @bind-Value="_newField.Required" DisplayName="Required" class="form-check-input"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr scope="row">
+                        <td>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button class="btn btn-secondary" @onclick="CancelField">Cancel</button>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr scope="row">
+                        <td>
+                            <button class="btn btn-primary" @onclick="AddField">
+                                Add Field
+                            </button>
+                        </td>
+                    </tr>
+                }
+                
+                </tbody>
+            </table>
+        </EditForm>
     </div>
  
 </div>
@@ -33,10 +77,13 @@
 @code {
 
     private bool _open;
-    private string _modalDisplay;
+    private bool _displayAddField;
+    
+    private string _modalDisplay = string.Empty;
     private List<Field> _fields = new();
     private Random _random = new();
     private int _counter = 0;
+    private Field _newField = new();
 
     [Parameter]
     public bool Open
@@ -54,7 +101,7 @@
 
     private void DisplayModal()
     {
-        _modalDisplay = _open ? "open" : "";
+        _modalDisplay = _open ? "open" : string.Empty;
     }
 
     private void CloseModal()
@@ -64,20 +111,28 @@
 
     private void AddField()
     {
-        _fields.Add(new Field
-        {
-            Id = _counter,
-            Name = $"Name {_random.Next(1, 100)}",
-            FieldType = FieldType.Text,
-            Required = false
-        });
-        _counter++;
+        _displayAddField = true;
     }
 
     private void DeleteField(int id)
     {
         var field = _fields.Single(f => f.Id == id);
         _fields.Remove(field);
+    }
+
+    private void SaveField()
+    {
+        _displayAddField = false;
+        _newField.Id = _counter;
+        _fields.Add(_newField);
+        _newField = new Field();
+        _counter++;
+    }
+
+    private void CancelField()
+    {
+        _displayAddField = false;
+        _newField = new Field();
     }
 
 }

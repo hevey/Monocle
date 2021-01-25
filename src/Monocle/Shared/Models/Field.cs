@@ -2,7 +2,7 @@ using System;
 
 namespace Monocle.Shared.Models
 {
-    public struct Field
+    public class Field
     {
         public int Id { get; set; }
         public string Name { get; set; }

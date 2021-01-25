@@ -39,3 +39,15 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+EditForm {
+    display: none;
+}
+
+table {
+    width: 100%;
+}
+
+.display {
+    display: inline-table;
+}

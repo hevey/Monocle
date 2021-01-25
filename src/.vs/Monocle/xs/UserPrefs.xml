@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{37293A6F-3298-43D6-A269-AB665452CDFB}|Default">
   <MonoDevelop.Ide.ItemProperties.Monocle.Server PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Monocle/Client/Pages/Index.razor">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monocle/Client/Pages/Schema.razor">
     <Files>
       <File FileName="Monocle/Client/Pages/Index.razor" Line="1" Column="1" />
-      <File FileName="Monocle/Client/Pages/Messages.razor" />
+      <File FileName="Monocle/Client/Pages/Messages.razor" Line="1" Column="1" />
+      <File FileName="Monocle/Client/Pages/Schema.razor" Line="36" Column="79" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
             <Node name="Monocle.Client" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="Index.razor" selected="True" />
+                <Node name="Schema.razor" selected="True" />
               </Node>
             </Node>
             <Node name="Monocle.Server" expanded="True" />
@@ -33,7 +34,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/hevey/Development/Monocle/src/Monocle/Client/Pages/Schema.razor" relfile="Monocle/Client/Pages/Schema.razor" line="12" column="1" />
-      <Breakpoint file="/Users/hevey/Development/Monocle/src/Monocle/Client/Pages/Schema.razor" relfile="Monocle/Client/Pages/Schema.razor" line="67" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

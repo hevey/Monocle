@@ -8,5 +8,6 @@ namespace Monocle.Shared.Models
         public abstract (int id, string name) PlatformDetails();
         public abstract void PostMessage(Contact contact);
         public abstract List<Contact> GetMessages();
+        
     }
 }
